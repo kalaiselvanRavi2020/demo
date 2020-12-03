@@ -1,0 +1,42 @@
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput=[];
+inp.on("line", (data) => {
+    userInput.push(data);
+});
+inp.on("close",()=>{
+    let  cat = {name: "Fluffy",activities: ["play", "eat cat food"],catFriends: [
+ {
+ name: "bar",
+ activities: ["be grumpy", "eat bread omblet"],
+ weight: 8,
+ furcolor: "white"
+ }, 
+ {
+ name: "foo",
+ activities: ["sleep", "pre-sleep naps"],
+ weight: 3
+ }
+ ]
+};
+console.log(cat);
+cat.height=3;
+cat.weight=7;
+console.log("T1 :",cat);
+cat.name="Fluffyy";
+console.log("T2 :",cat.name);
+console.log("T3 :",cat.catFriends[0].activities,cat.catFriends[1].activities);
+console.log("T4 :",cat.catFriends[0].name,cat.catFriends[1].name);
+console.log("T5 :",cat.catFriends[0].weight+cat.catFriends[1].weight);
+console.log("T6 :",cat.activities,cat.catFriends[0].activities,cat.catFriends[1].activities);
+cat.catFriends[0].height=3;
+cat.catFriends[1].height=2;
+cat.catFriends[0].nails="sharp";
+cat.catFriends[1].nails="cute sharp";
+console.log("T7 :",cat.catFriends);
+cat.catFriends[0].furcolor="brownish white";
+console.log("T8 :",cat.catFriends[0].furcolor);
+});
