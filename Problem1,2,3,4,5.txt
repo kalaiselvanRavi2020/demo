@@ -1,0 +1,48 @@
+const readline = require("readline");
+const inp = readline.createInterface({
+  input: process.stdin
+});
+const userInput=[];
+inp.on("line", (data) => {
+    userInput.push(data);
+});
+inp.on("close",()=>{
+    
+ let object = {name: "RajiniKanth", age: 33, hasPets : false};
+ console.log(Object.values(object));
+ console.log(Object.keys(object));
+  object = {name: "ISRO", age: 35, role: "Scientist"};
+  let c=[];
+  for(let x in object)
+  {
+      let b=[];
+      b.push(x);
+      b.push(object[x]);
+      c.push(b);
+  }
+  console.log(c);
+  let array = ["GUVI", "I", "am", "Geek"];
+  let obj={};
+  for(let i of array)
+  {
+      if(obj[i]===undefined)
+      {
+          obj[i]=array[array.length-1];
+      }
+      break;
+  }
+  console.log(obj);
+  array = [["make", "Ford"], ["model", "Mustang"], ["year", 1964]];
+  obj={};
+  let k=0;
+  for(let i of array)
+  {
+      if(obj[i]===undefined)
+      {
+          obj[i[0]]=array[k][1];
+      }
+      k++;
+  }
+  console.log(obj);
+ 
+});
